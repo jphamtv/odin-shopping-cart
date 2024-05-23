@@ -15,3 +15,5 @@ const ProductCard = ({ key, product, onClick }) => {
     </div>
   );
 }
+
+export default ProductCard;

@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
-import { Button } from "./Button";
+import Button from "./Button";
 import '../styles/Input.css';
 
-export const Input = ({ type, name, value, onChange }) => {
+const Input = ({ type, name, value, onChange }) => {
   return (
     <div className="input">
       <Button />
@@ -19,3 +19,5 @@ Input.propTypes = {
   value: PropTypes.string,
   onChange: PropTypes.func.isRequired,
 };
+
+export default Input;

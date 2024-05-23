@@ -1,4 +1,5 @@
-import { fetchProducts } from "../../utils/fetchProducts";
+import fetchProducts from "../../utils/fetchProducts";
+import ProductCard from "../common/ProductCard";
 import { useState, useEffect } from "react";
 
 const Shop = () => {
@@ -32,3 +33,5 @@ const Shop = () => {
     </div>
   ); 
 };
+
+export default Shop;

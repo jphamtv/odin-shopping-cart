@@ -1,23 +1,38 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import styles from '../../styles/NavBar.module.css';
+import Cart from './Cart';
 
-export const NavBar = () => {
+const NavBar = () => {
   return (
-    <div>
+    <div className={styles.navBarContainer}>
       <h1>Shopping Cart</h1>
-      <div>
+      <div className={styles.navList}>
         <ul>
           <li>
-            <Link to='/'>Home</Link>
+            <NavLink
+              to='/'
+              className={({ isActive }) =>
+                isActive ? styles.activeLink : styles.navLink
+              }
+            >
+              Home
+            </NavLink>
           </li>
           <li>
-            <Link to='shop'>Shop</Link>
+            <NavLink
+              to='/shop'
+              className={({ isActive }) =>
+                isActive ? styles.activeLink : styles.navLink
+              }
+            >
+              Shop
+            </NavLink>
           </li>
         </ul>
-        <div>
-          <img src="" alt="" />
-          <div>3</div>
-        </div>
+        <Cart />  
       </div>
     </div>
   );
 };
+
+export default NavBar;

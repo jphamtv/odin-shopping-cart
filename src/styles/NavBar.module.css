@@ -1,0 +1,28 @@
+.navBarContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navList {
+  display: flex;
+}
+
+.activeLink {
+  color: green;
+  text-decoration: none;
+}
+
+.navLink {
+  text-decoration: none;
+  color: #000;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+}
+
+li {
+  margin-right: 10px;
+}
