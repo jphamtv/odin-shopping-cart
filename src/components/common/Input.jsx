@@ -1,13 +1,15 @@
 import PropTypes from "prop-types";
 import Button from "./Button";
-import '../styles/Input.css';
+import styles from '../../styles/Input.module.css';
 
 const Input = ({ type, name, value, onChange }) => {
+  
+
   return (
     <div className="input">
-      <Button />
+      <Button label='–'/>
       <input name={name} type={type} value={value} onChange={onChange} />
-      <Button />
+      <Button label='+'/>
     </div>
   );
 };

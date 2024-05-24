@@ -4,8 +4,8 @@ import Cart from './Cart';
 
 const NavBar = () => {
   return (
-    <div className={styles.navBarContainer}>
-      <h1>Shopping Cart</h1>
+    <header className={styles.navBarContainer}>
+      <h1>Shopping Cart Project</h1>
       <div className={styles.navList}>
         <ul>
           <li>
@@ -31,7 +31,7 @@ const NavBar = () => {
         </ul>
         <Cart />  
       </div>
-    </div>
+    </header>
   );
 };
 

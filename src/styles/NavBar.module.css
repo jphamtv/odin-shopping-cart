@@ -1,10 +1,14 @@
 .navBarContainer {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid lightgray;
 }
 
 .navList {
   display: flex;
+  align-items: center;
 }
 
 .activeLink {
@@ -17,6 +21,15 @@
   color: #000;
 }
 
+.navLink:hover {
+  color: green;
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
 ul {
   list-style-type: none;
   padding: 0;
@@ -24,5 +37,5 @@ ul {
 }
 
 li {
-  margin-right: 10px;
+  margin-right: 1rem;
 }

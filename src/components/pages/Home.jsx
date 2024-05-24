@@ -12,8 +12,8 @@ const Home = () => {
         <img src="https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2.jpg" alt="" />
       </div>
       <div>
-        <h1>Shop til you drop!</h1>
-        <Button />
+        <h2>Shop til you drop!</h2>
+        <Button label='Shop Now'/>
       </div>
     </div>
   );

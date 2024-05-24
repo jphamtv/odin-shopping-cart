@@ -23,12 +23,21 @@ const Shop = () => {
 
     fetchProductsForPage();
   }, []);
+
+  if (loading) {
+    return <div>Loading...</div>
+  }
   
   return (
     <div>
       <h2>Items</h2>
       <div className="product-grid">
-        <ProductCard key={key} product={product} />
+        {products.map((product) => (
+          <ProductCard
+            key={product.id}
+            product={product}
+          />
+        ))}
       </div>
     </div>
   ); 

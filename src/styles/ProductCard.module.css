@@ -1,0 +1,19 @@
+img {
+  max-height: 10rem;
+  width: auto;
+}
+
+.card {
+  max-width: 15rem;
+  padding: 1rem;
+  border: 1px solid black;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.price {
+  font-weight: bold;
+}

@@ -1,18 +1,24 @@
 .bagIcon {
-  width: auto;
-  height: 2rem;
+  height: 1.25rem;
   margin-right: 0.5rem;
 }
 
 .cartButton {
-  width: 5rem;
-  height: 3rem;
+  height: 2.5rem;
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  padding: 0 0.75rem;
+  background-color: #fff;
+  border: 1px solid lightgray;
+  border-radius: 0.25rem;
+}
+
+.cartButton:hover {
+  border: 1px solid green;
 }
 
 .itemCount {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: bold;
 }
