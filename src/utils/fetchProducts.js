@@ -17,7 +17,7 @@ const fetchProducts = async () => {
   }
 };
 
-// Temporary testing code
+// Temporary testing code - OK TO DELETE
 fetchProducts()
   .then(products => {
     console.log('Fetched products:', products);

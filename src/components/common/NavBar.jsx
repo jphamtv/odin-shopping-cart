@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import styles from '../../styles/NavBar.module.css';
+import bagIcon from '../../assets/bag.svg';
 import Cart from './Cart';
 
 const NavBar = () => {
@@ -29,7 +30,12 @@ const NavBar = () => {
             </NavLink>
           </li>
         </ul>
-        <Cart />  
+        {/* <Cart />   */}
+        <button className={styles.cartButton}>
+          <img className={styles.bagIcon} src={bagIcon} alt="" />
+          {/* <div>{itemCount}</div> */}
+          <div className={styles.itemCount}>3</div>
+        </button>
       </div>
     </header>
   );
