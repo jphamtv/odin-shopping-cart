@@ -24,8 +24,15 @@ const Shop = () => {
     fetchProductsForPage();
   }, []);
 
+  const renderLoading = () => <div>Loading...</div>;
+  const renderError = () => <div>Oops...error fetching products</div>;
+
   if (loading) {
-    return <div>Loading...</div>
+    return renderLoading();
+  }
+
+  if (error) {
+    return renderError();
   }
   
   return (
@@ -36,6 +43,10 @@ const Shop = () => {
           <ProductCard
             key={product.id}
             product={product}
+            onAddToCart={(product, quantity) => {
+              // Handle adding the product to the cart
+              console.log(`Adding ${quantity} ${product.title} to the cart`)
+            }}
           />
         ))}
       </div>
