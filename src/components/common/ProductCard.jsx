@@ -16,7 +16,7 @@ const ProductCard = ({ product, onAddToCart }) => {
       <img src={product.image} className={styles.productImage} alt={product.title} />
       <div className={styles.flex}>
         <div>{product.title}</div>
-        <div className={styles.price}>${product.price}</div>
+        <div className={styles.price}>${product.price.toFixed(2)}</div>
       </div>
       <Input type='number' initialValue={quantity} onChange={(value) => setQuantity(value)} />
       <Button label='Add to cart' onClick={handleAddToCart} />

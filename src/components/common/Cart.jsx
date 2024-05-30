@@ -26,7 +26,7 @@ const Cart = () => {
         <div>Tax: ${tax.toFixed(2)}</div>
         <div>Order total: ${orderTotal.toFixed(2)}</div>
       </div>
-      <Button type='submit' label='Checkout' onClick={() => {/* Handle checkout */ }} />
+      <Button type='submit' label='Submit Order' onClick={() => {/* Handle checkout */ }} />
     </div>
   );
 };
