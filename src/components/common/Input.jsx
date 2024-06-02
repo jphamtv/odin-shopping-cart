@@ -4,7 +4,7 @@ import Button from "./Button";
 import styles from '../../styles/Input.module.css';
 
 const Input = ({ type, name, initialValue, onChange }) => {  
-  const [value, setValue] = useState(initialValue || 0);
+  const [value, setValue] = useState(initialValue || 1);
 
   const handleIncrement = () => {
     const newValue = value + 1;
@@ -33,7 +33,7 @@ const Input = ({ type, name, initialValue, onChange }) => {
         name={name}
         type='text'
         inputMode={type === 'number' ? 'numeric' : 'text'}
-        pattern={type === 'number' ? '[0-9]*' : undefined}
+        pattern={type === 'number' ? '[1-9]*' : undefined}
         value={value.toString()}
         onChange={handleChange}
         className={styles.inputField}

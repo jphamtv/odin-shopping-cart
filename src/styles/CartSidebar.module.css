@@ -1,0 +1,15 @@
+.cartSidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 500px;
+  height: 100vh;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  padding: 1rem;
+}
+
+.img {
+  max-width: 40px;
+}

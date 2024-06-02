@@ -1,6 +1,11 @@
 
 #root {
-  max-width: 1024px;
+  /* max-width: 1024px; */
   margin: 0 auto;
-  padding: 0 2rem;
+  /* padding: 0 2rem; */
+}
+
+h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
 }

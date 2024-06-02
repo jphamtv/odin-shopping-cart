@@ -2,6 +2,7 @@ import fetchProducts from "../../utils/fetchProducts";
 import ProductCard from "../common/ProductCard";
 import { useState, useEffect, useContext } from "react";
 import { CartContext } from "../../context/CartContext";
+import styles from '../../styles/Shop.module.css';
 
 const Shop = () => {
   const { addToCart } = useContext(CartContext);
@@ -38,9 +39,9 @@ const Shop = () => {
   }
   
   return (
-    <div>
+    <div className={styles.shopContainer}>
       <h2>Items</h2>
-      <div className="product-grid">
+      <div className={styles.productGrid}>
         {products.map((product) => (
           <ProductCard
             key={product.id}

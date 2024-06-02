@@ -1,12 +1,17 @@
 import { NavLink } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { CartContext } from "../../context/CartContext";
 import styles from '../../styles/NavBar.module.css';
 import bagIcon from '../../assets/bag.svg';
-import Cart from './CartSidebar';
+import CartSidebar from './CartSidebar';
 
 const NavBar = () => {
   const { cartItems } = useContext(CartContext);
+  const [isCartOpen, setIsCartOpen] = useState(false);
+
+  const toggleCardSidebar = () => {
+    setIsCartOpen(!isCartOpen);
+  };
 
   const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
   
@@ -36,11 +41,12 @@ const NavBar = () => {
             </NavLink>
           </li>
         </ul>
-        <button className={styles.cartButton}>
+        <button className={styles.cartButton} onClick={toggleCardSidebar}>
           <img className={styles.bagIcon} src={bagIcon} alt="" />
           <div className={styles.itemCount}>{totalQuantity}</div>
         </button>
       </div>
+      {isCartOpen && <CartSidebar toggleCardSidebar={toggleCardSidebar} />}
     </header>
   );
 };

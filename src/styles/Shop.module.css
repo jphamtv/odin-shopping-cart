@@ -1,0 +1,9 @@
+.shopContainer {
+  padding: 2rem;
+}
+
+.productGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}

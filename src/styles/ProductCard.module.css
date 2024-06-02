@@ -1,10 +1,11 @@
 .productImage {
-  max-height: 10rem;
+  height: 10rem;
+  width: 10rem;
   width: auto;
 }
 
 .card {
-  max-width: 15rem;
+  width: 300px;
   padding: 1rem;
   border: 1px solid black;
 }
