@@ -1,9 +1,15 @@
 import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 import styles from '../../styles/NavBar.module.css';
 import bagIcon from '../../assets/bag.svg';
-import Cart from './Cart';
+import Cart from './CartSidebar';
 
 const NavBar = () => {
+  const { cartItems } = useContext(CartContext);
+
+  const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
+  
   return (
     <header className={styles.navBarContainer}>
       <h1>Shopping Cart Project</h1>
@@ -30,11 +36,9 @@ const NavBar = () => {
             </NavLink>
           </li>
         </ul>
-        {/* <Cart />   */}
         <button className={styles.cartButton}>
           <img className={styles.bagIcon} src={bagIcon} alt="" />
-          {/* <div>{itemCount}</div> */}
-          <div className={styles.itemCount}>3</div>
+          <div className={styles.itemCount}>{totalQuantity}</div>
         </button>
       </div>
     </header>

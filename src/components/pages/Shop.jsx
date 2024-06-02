@@ -1,8 +1,10 @@
 import fetchProducts from "../../utils/fetchProducts";
 import ProductCard from "../common/ProductCard";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 
 const Shop = () => {
+  const { addToCart } = useContext(CartContext);
   const [products, setProducts] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -44,7 +46,7 @@ const Shop = () => {
             key={product.id}
             product={product}
             onAddToCart={(product, quantity) => {
-              // Handle adding the product to the cart
+              addToCart(product, quantity);
               console.log(`Adding ${quantity} ${product.title} to the cart`)
             }}
           />
