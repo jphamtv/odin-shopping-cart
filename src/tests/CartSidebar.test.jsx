@@ -1,7 +1,10 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, within } from '@testing-library/react';
+import { toBeInTheDocument } from '@testing-library/jest-dom/matchers';
 import CartSidebar from '../components/common/CartSidebar';
 import { CartContext } from '../context/CartContext';
 import { describe, expect, it, vi } from 'vitest';
+
+expect.extend({ toBeInTheDocument });
 
 describe('CartSidebar', () => {
   it('renders "Cart is empty" when the cart is empty', () => {
@@ -33,24 +36,26 @@ describe('CartSidebar', () => {
   it('calls removeFromCart with the correct product ID when "Remove" button is clicked', () => {
     const cartItems = [{ id: 1, title: 'Product 1', price: 10, quantity: 1 }];
     const removeFromCartMock = vi.fn();
-    render(
+    const { container } = render(
       <CartContext.Provider value={{ cartItems, removeFromCart: removeFromCartMock }}>
         <CartSidebar toggleCartSidebar={() => {}} />
       </CartContext.Provider>
     );
-    fireEvent.click(screen.getByText('Remove'));
+    const removeButton = within(container).getByText('Remove');
+    fireEvent.click(removeButton);
     expect(removeFromCartMock).toHaveBeenCalledWith(1);
   });
 
   it('calls clearCart when "Clear Cart" button is clicked', () => {
     const cartItems = [{ id: 1, title: 'Product 1', price: 10, quantity: 1 }];
     const clearCartMock = vi.fn();
-    render(
+    const { container } = render(
       <CartContext.Provider value={{ cartItems, clearCart: clearCartMock }}>
         <CartSidebar toggleCartSidebar={() => {}} />
       </CartContext.Provider>
     );
-    fireEvent.click(screen.getByText('Clear Cart'));
+    const clearCartButton = within(container).getByText('Clear Cart');
+    fireEvent.click(clearCartButton);
     expect(clearCartMock).toHaveBeenCalled();
   });
 });
