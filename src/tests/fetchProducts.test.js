@@ -40,7 +40,7 @@ describe('fetchProducts', () => {
   it('should throw an error when the API request fails', async () => {
     // Override the default handler to return a 500 status
     server.use(
-      http.get('https://fakestoreapi.com/products/category/electronics', () => {
+      http.get('https://fakestoreapi.com/products', () => {
         console.log('Mocking error response');
         return new Response(null, { status: 500 });
       })

@@ -17,13 +17,4 @@ const fetchProducts = async () => {
   }
 };
 
-// Temporary testing code - OK TO DELETE
-fetchProducts()
-  .then(products => {
-    console.log('Fetched products:', products);
-  })
-  .catch(error => {
-    console.error('Error:', error);
-  });
-
 export default fetchProducts;
