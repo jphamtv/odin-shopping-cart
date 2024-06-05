@@ -22,7 +22,7 @@ const ProductCard = ({ product, onAddToCart }) => {
       <div className={styles.price}>${product.price.toFixed(2)}</div>
       <div className={styles.buttonContainer}>
         <Input type='number' initialValue={quantity} onChange={(value) => setQuantity(value)} />
-        <Button label='Add to cart' onClick={handleAddToCart} className={styles.onAddToCartBtn}/>
+        <Button label='Add to cart' onClick={handleAddToCart} className={styles.addToCartBtn}/>
       </div>
     </div>
   );

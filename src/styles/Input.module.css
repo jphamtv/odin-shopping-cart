@@ -1,9 +1,53 @@
-input {
-  padding: 0.5rem;
+.inputWrapper {
+  display: flex;
   max-width: 3rem;
   text-align: center;
 }
 
+.baseStyle {
+  border: none;
+  background-color: rgb(239, 239, 239);
+  height: 2.5rem;
+  cursor: pointer;
+}
+
 .inputField {
+  composes: baseStyle;
+  color: #000;
+  font-weight: 700;
+  border-radius: 0;
+  width: 2.5rem;
+  text-align: center;
+}
+
+.inputField:focus {
+  outline: none;
+}
+
+.baseBtn {
+  composes: baseStyle;
   color: green;
+  font-size: 1.25rem;
+  padding: 0 0.75rem;
+}
+
+.minusBtn {
+  composes: baseBtn;
+  border-radius: 50rem 0 0 50rem;
+}
+
+.plusBtn {
+  composes: baseBtn;
+  border-radius: 0 50rem 50rem 0;
+}
+
+.minusBtn:hover, 
+.plusBtn:hover {
+  background-color: rgb(227, 227, 227);
+}
+
+.minusBtn:active,
+.plusBtn:active {
+  background-color: green;
+  color: white;
 }

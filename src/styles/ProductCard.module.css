@@ -54,3 +54,22 @@
   margin: 0.5rem 0;
 }
 
+.addToCartBtn {
+  height: 2.5rem;
+  width: 9rem;
+  padding: 0.5rem 1rem;
+  border-radius: 50rem;
+  background-color: green;
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+}
+
+.addToCartBtn:hover {
+  background-color: rgb(6, 120, 6);
+}
+
+.addToCartBtn:active {
+  background-color: rgb(7, 101, 7);
+}

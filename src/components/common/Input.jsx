@@ -27,8 +27,8 @@ const Input = ({ type, name, initialValue, onChange }) => {
   };
 
   return (
-    <div className="input">
-      <Button label='–'onClick={handleDecrement} />
+    <div className={styles.inputWrapper}>
+      <Button label='–'onClick={handleDecrement} className={styles.minusBtn} />
       <input
         name={name}
         type='text'
@@ -38,7 +38,7 @@ const Input = ({ type, name, initialValue, onChange }) => {
         onChange={handleChange}
         className={styles.inputField}
       />
-      <Button label='+' onClick={handleIncrement} />
+      <Button label='+' onClick={handleIncrement} className={styles.plusBtn} />
     </div>
   );
 };
