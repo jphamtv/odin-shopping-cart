@@ -17,7 +17,15 @@ const NavBar = () => {
   
   return (
     <header className={styles.navBarContainer}>
-      <h1>Shopping Cart Project</h1>
+      {/* <h1>Shopping Cart Project</h1> */}
+      <h1>
+        <NavLink
+          to='/'
+          className={styles.navLink}
+        >
+          Shopping Cart Project
+        </NavLink>
+      </h1>
       <div className={styles.navList}>
         <ul>
           <li>

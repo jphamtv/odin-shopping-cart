@@ -13,13 +13,17 @@ const ProductCard = ({ product, onAddToCart }) => {
 
   return (
     <div className={styles.card}>
-      <img src={product.image} className={styles.productImage} alt={product.title} />
-      <div className={styles.flex}>
-        <div>{product.title}</div>
-        <div className={styles.price}>${product.price.toFixed(2)}</div>
+      <div className={styles.imageContainer}>
+        <img src={product.image} className={styles.productImage} alt={product.title} />
       </div>
-      <Input type='number' initialValue={quantity} onChange={(value) => setQuantity(value)} />
-      <Button label='Add to cart' onClick={handleAddToCart} />
+      <div className={styles.titleContainer}>
+        <div className={styles.title}>{product.title}</div>
+      </div>
+      <div className={styles.price}>${product.price.toFixed(2)}</div>
+      <div className={styles.buttonContainer}>
+        <Input type='number' initialValue={quantity} onChange={(value) => setQuantity(value)} />
+        <Button label='Add to cart' onClick={handleAddToCart} className={styles.onAddToCartBtn}/>
+      </div>
     </div>
   );
 }
