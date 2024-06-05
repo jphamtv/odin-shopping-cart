@@ -41,7 +41,7 @@ const Shop = () => {
   return (
     <div className={styles.shopContainer}>
       <h2>Items</h2>
-      <div className={styles.productGrid}>
+      <div className={styles.productContainer}>
         {products.map((product) => (
           <ProductCard
             key={product.id}
