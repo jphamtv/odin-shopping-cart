@@ -2,7 +2,7 @@
   position: fixed;
   top: 0;
   right: 0;
-  width: 500px;
+  width: 600px;
   height: 100vh;
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -10,6 +10,74 @@
   padding: 1rem;
 }
 
-.img {
-  max-width: 40px;
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.headerTitle {
+  flex: 1;
+  text-align: center;
+}
+
+.closeBtn {
+  background-color: none;
+  color: green;
+  font-size: 1.5rem;
+  padding: 0.5rem 0.75rem;
+  border: none;
+  border-radius: 0.25rem;
+  /* margin-right: 5rem; */
+}
+
+.productContainer {
+  display: flex;
+  /* align-items: center; */
+  padding: 1rem 0;
+  border-bottom: 1px solid lightgray;
+}
+
+.imageContainer {
+  display: flex;
+  justify-content: center;
+  width: 7rem;
+}
+
+.productInfo {
+  flex: 1;
+}
+
+.productImage {
+  max-height: 7rem;
+  margin-right: 1rem;
+}
+
+.topRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.bottomRow {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.priceContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 0.5rem;
+}
+
+.removeBtn {
+  background-color: rgb(239, 239, 239);
+  color: green;
+  border: none;
+  border-radius: 0.25rem;
+}
+
+.removeBtn:hover {
+  background-color: rgb(227, 227, 227);
 }

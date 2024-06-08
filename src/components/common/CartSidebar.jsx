@@ -6,6 +6,8 @@ import Button from './Button';
 const CartSidebar = ({ toggleCardSidebar }) => {
   const { cartItems, removeFromCart, clearCart } = useContext(CartContext);
   const isEmpty = cartItems.length === 0;
+  
+  const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
 
   const subTotal = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
   const tax = subTotal * .10; 
@@ -13,26 +15,37 @@ const CartSidebar = ({ toggleCardSidebar }) => {
 
   return (
     <div className={styles.cartSidebar}>
-      <header>
-        <Button label='X' type='cancel' onClick={toggleCardSidebar} />
-        <h2>Cart</h2>
+      <header className={styles.header}>
+        <Button label='✕' type='cancel' onClick={toggleCardSidebar} className={styles.closeBtn} />
+        <h2 className={styles.headerTitle}>Shopping Cart</h2>
       </header>
       {isEmpty ? (
         <div>Cart is empty</div>
       ) : (
         <>
           {cartItems.map((item) => (
-            <div key={item.id}>
-              <img src={item.image} className={styles.img} alt={item.title} />
-              <div>{item.title}</div>
-              <div>Qty: {item.quantity}</div>
-              <div>${item.price}</div>
-              <Button type='submit' label='Remove' onClick={() => removeFromCart(item.id)} />
+            <div key={item.id} className={styles.productContainer}>
+              <div className={styles.imageContainer}>
+                <img src={item.image} className={styles.productImage} alt={item.title} />
+              </div>
+              <div className={styles.productInfo}>
+                <div className={styles.topRow}>
+                  <div>{item.title}</div>
+                  <div>${item.price.toFixed(2)}</div>
+                </div>
+                <div className={styles.bottomRow}>
+                  <div>Qty: {item.quantity}</div>
+                  <Button type='submit' label='Remove' onClick={() => removeFromCart(item.id)} className={styles.removeBtn}/>
+                </div>
+              </div>
+              <div>
+              </div>
             </div>
           ))}
-          <div>
-            <div>Subtotal: ${subTotal.toFixed(2)}</div>
-            <div>Tax: ${tax.toFixed(2)}</div>
+          <div className={styles.priceContainer}>
+            <div>Subtotal ({totalQuantity} items): ${subTotal.toFixed(2)}</div>
+            <div>Estimated tax: ${tax.toFixed(2)}</div>
+            <hr></hr>
             <div>Order total: ${orderTotal.toFixed(2)}</div>
           </div>
           <Button type='reset' label='Clear Cart' onClick={clearCart} />
