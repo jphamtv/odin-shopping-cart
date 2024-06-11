@@ -62,12 +62,8 @@ const NavBar = () => {
           <div className={styles.itemCount}>{totalQuantity}</div>
         </button>
       </div>
-      {isCartOpen && (
-        <>
-          <Overlay onClick={toggleCardSidebar} />
-          <CartSidebar toggleCardSidebar={toggleCardSidebar} />
-        </>
-      )}
+      <CartSidebar toggleCardSidebar={toggleCardSidebar} isCartOpen={isCartOpen}/>
+      {isCartOpen && <Overlay onClick={toggleCardSidebar} />}
     </header>
   );
 };

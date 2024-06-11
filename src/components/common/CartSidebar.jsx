@@ -3,18 +3,17 @@ import { CartContext } from '../../context/CartContext';
 import styles from '../../styles/CartSidebar.module.css';
 import Button from './Button';
 
-const CartSidebar = ({ toggleCardSidebar }) => {
-  const { cartItems, removeFromCart, clearCart } = useContext(CartContext);
-  const isEmpty = cartItems.length === 0;
-  
+const CartSidebar = ({ toggleCardSidebar, isCartOpen }) => {
+  const { cartItems, removeFromCart } = useContext(CartContext);
+  const isEmpty = cartItems.length === 0;  
   const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
-
   const subTotal = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
   const tax = subTotal * .10; 
   const orderTotal = subTotal + tax; 
+  const sideBarClasses = `${styles.cartSidebar} ${isCartOpen ? styles.cartSidebarOpen : styles.cartSidebarHidden}`
 
   return (
-    <div className={styles.cartSidebar}>
+    <div className={sideBarClasses}>
       <header className={styles.header}>
         <Button label='✕' type='cancel' onClick={toggleCardSidebar} className={styles.closeBtn} />
         <h2 className={styles.headerTitle}>Shopping Cart</h2>
