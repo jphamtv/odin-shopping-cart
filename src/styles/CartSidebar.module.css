@@ -8,6 +8,7 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   z-index: 999;
   padding: 1rem;
+  overflow-y: scroll;
 }
 
 .header {
@@ -42,6 +43,7 @@
 .productContainer {
   display: flex;
   padding: 1rem 0;
+  gap: 1rem;
   border-bottom: 1px solid lightgray;
 }
 
@@ -57,7 +59,9 @@
 
 .productImage {
   max-height: 7rem;
-  margin-right: 1rem;
+  max-width: 100%;
+  margin: 0 1rem;
+  object-fit: contain;
 }
 
 .topRow {

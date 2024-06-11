@@ -22,7 +22,7 @@ const NavBar = () => {
           to='/'
           className={styles.navLink}
         >
-          Shopping Cart Project
+          The General Store
         </NavLink>
       </h1>
       <div className={styles.navList}>

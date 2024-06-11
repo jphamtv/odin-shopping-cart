@@ -17,7 +17,7 @@ const Home = () => {
         </div>
       </div>
       <div className={styles.ctaContainer}>
-        <h2 className={styles.ctaText}>Shop til you drop!</h2>
+        <h2 className={styles.ctaText}>Explore today's deals!</h2>
         <NavLink to='/shop'>
           <Button label='Shop Now' className={styles.callToActionBtn} />
         </NavLink>
