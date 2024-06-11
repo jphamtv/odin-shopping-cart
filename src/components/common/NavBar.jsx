@@ -1,9 +1,10 @@
 import { NavLink } from "react-router-dom";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { CartContext } from "../../context/CartContext";
 import styles from '../../styles/NavBar.module.css';
 import bagIcon from '../../assets/bag.svg';
 import CartSidebar from './CartSidebar';
+import Overlay from "./Overlay";
 
 const NavBar = () => {
   const { cartItems } = useContext(CartContext);
@@ -14,6 +15,14 @@ const NavBar = () => {
   };
 
   const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
+
+  useEffect(() => {
+    if (isCartOpen) {
+      document.body.classList.add(styles.noScroll);
+    } else {
+      document.body.classList.remove(styles.noScroll);
+    }
+  }, [isCartOpen]);
   
   return (
     <header className={styles.navBarContainer}>
@@ -53,7 +62,12 @@ const NavBar = () => {
           <div className={styles.itemCount}>{totalQuantity}</div>
         </button>
       </div>
-      {isCartOpen && <CartSidebar toggleCardSidebar={toggleCardSidebar} />}
+      {isCartOpen && (
+        <>
+          <Overlay onClick={toggleCardSidebar} />
+          <CartSidebar toggleCardSidebar={toggleCardSidebar} />
+        </>
+      )}
     </header>
   );
 };
