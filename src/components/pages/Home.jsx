@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import Button from "../common/Button";
 import heroImage from '../../assets/hero.png';
 import styles from '../../styles/Home.module.css';
@@ -15,9 +16,11 @@ const Home = () => {
           <img className={styles.featuredImage} src="https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2.jpg" alt="" />
         </div>
       </div>
-      <div>
-        <h2>Shop til you drop!</h2>
-        <Button label='Shop Now'/>
+      <div className={styles.ctaContainer}>
+        <h2 className={styles.ctaText}>Shop til you drop!</h2>
+        <NavLink to='/shop'>
+          <Button label='Shop Now' className={styles.callToActionBtn} />
+        </NavLink>
       </div>
     </div>
   );

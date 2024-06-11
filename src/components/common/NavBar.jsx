@@ -17,7 +17,6 @@ const NavBar = () => {
   
   return (
     <header className={styles.navBarContainer}>
-      {/* <h1>Shopping Cart Project</h1> */}
       <h1>
         <NavLink
           to='/'

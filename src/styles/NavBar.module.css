@@ -14,11 +14,13 @@
 .activeLink {
   color: green;
   text-decoration: none;
+  font-weight: 700;
 }
 
 .navLink {
   text-decoration: none;
   color: #000;
+  font-weight: 700;
 }
 
 .navLink:hover {
@@ -37,7 +39,7 @@ ul {
 }
 
 li {
-  margin-right: 1rem;
+  margin-right: 2rem;
 }
 
 /* Cart button */

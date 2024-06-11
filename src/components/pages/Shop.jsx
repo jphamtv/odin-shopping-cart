@@ -27,8 +27,8 @@ const Shop = () => {
     fetchProductsForPage();
   }, []);
 
-  const renderLoading = () => <div>Loading...</div>;
-  const renderError = () => <div>Oops...error fetching products</div>;
+  const renderLoading = () => <div className={styles.emptyState}>Loading...</div>;
+  const renderError = () => <div className={styles.emptyState}>Oops...error fetching products</div>;
 
   if (loading) {
     return renderLoading();
@@ -40,18 +40,20 @@ const Shop = () => {
   
   return (
     <div className={styles.shopContainer}>
-      <h2>Items</h2>
-      <div className={styles.productContainer}>
-        {products.map((product) => (
-          <ProductCard
-            key={product.id}
-            product={product}
-            onAddToCart={(product, quantity) => {
-              addToCart(product, quantity);
-              console.log(`Adding ${quantity} ${product.title} to the cart`)
-            }}
-          />
-        ))}
+      <div className={styles.productWrapper}>
+        <h2>Items</h2>  
+        <div className={styles.productContainer}>
+          {products.map((product) => (
+            <ProductCard
+              key={product.id}
+              product={product}
+              onAddToCart={(product, quantity) => {
+                addToCart(product, quantity);
+                console.log(`Adding ${quantity} ${product.title} to the cart`)
+              }}
+            />
+          ))}
+        </div>
       </div>
     </div>
   ); 

@@ -20,7 +20,7 @@ const CartSidebar = ({ toggleCardSidebar }) => {
         <h2 className={styles.headerTitle}>Shopping Cart</h2>
       </header>
       {isEmpty ? (
-        <div>Cart is empty</div>
+        <div className={styles.emptyState}>Cart is empty</div>
       ) : (
         <>
           {cartItems.map((item) => (
@@ -45,11 +45,11 @@ const CartSidebar = ({ toggleCardSidebar }) => {
           <div className={styles.priceContainer}>
             <div>Subtotal ({totalQuantity} items): ${subTotal.toFixed(2)}</div>
             <div>Estimated tax: ${tax.toFixed(2)}</div>
-            <hr></hr>
-            <div>Order total: ${orderTotal.toFixed(2)}</div>
+            <div className={styles.orderTotal}>Order total: ${orderTotal.toFixed(2)}</div>
           </div>
-          <Button type='reset' label='Clear Cart' onClick={clearCart} />
-          <Button type='submit' label='Submit Order' onClick={() => alert(`Your total is $${orderTotal.toFixed(2)}. Thank you for shopping with us!`)} />          
+          <div className={styles.btnContainer}>
+            <Button type='submit' label='Submit Order' onClick={() => alert(`Your total is $${orderTotal.toFixed(2)}. Thank you for shopping with us!`)} className={styles.submitOrderBtn} />          
+          </div>
         </>
       )}
     </div>
