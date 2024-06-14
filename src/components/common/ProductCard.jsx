@@ -29,8 +29,8 @@ const ProductCard = ({ product, onAddToCart }) => {
 }
 
 ProductCard.propTypes = {
-  product: PropTypes.object,
-  onAddToCart: PropTypes.func,
+  product: PropTypes.object.isRequired,
+  onAddToCart: PropTypes.func.isRequired,
 };
 
 export default ProductCard;

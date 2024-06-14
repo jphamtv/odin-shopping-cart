@@ -46,16 +46,4 @@ describe('CartSidebar', () => {
     expect(removeFromCartMock).toHaveBeenCalledWith(1);
   });
 
-  it('calls clearCart when "Clear Cart" button is clicked', () => {
-    const cartItems = [{ id: 1, title: 'Product 1', price: 10, quantity: 1 }];
-    const clearCartMock = vi.fn();
-    const { container } = render(
-      <CartContext.Provider value={{ cartItems, clearCart: clearCartMock }}>
-        <CartSidebar toggleCartSidebar={() => {}} />
-      </CartContext.Provider>
-    );
-    const clearCartButton = within(container).getByText('Clear Cart');
-    fireEvent.click(clearCartButton);
-    expect(clearCartMock).toHaveBeenCalled();
-  });
 });

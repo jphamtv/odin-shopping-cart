@@ -1,4 +1,5 @@
-import { useState, useContext } from 'react';
+import PropTypes from "prop-types";
+import { useContext } from 'react';
 import { CartContext } from '../../context/CartContext';
 import styles from '../../styles/CartSidebar.module.css';
 import Button from './Button';
@@ -53,6 +54,11 @@ const CartSidebar = ({ toggleCardSidebar, isCartOpen }) => {
       )}
     </div>
   );
+};
+
+CartSidebar.propTypes = {
+  toggleCardSidebar: PropTypes.func.isRequired,
+  isCartOpen: PropTypes.bool.isRequired,
 };
 
 export default CartSidebar;
