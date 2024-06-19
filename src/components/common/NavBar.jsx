@@ -1,9 +1,9 @@
 import { NavLink } from "react-router-dom";
 import { useContext, useState, useEffect } from "react";
 import { CartContext } from "../../context/CartContext";
-import styles from '../../styles/NavBar.module.css';
-import bagIcon from '../../assets/bag.svg';
-import CartSidebar from './CartSidebar';
+import styles from "../../styles/NavBar.module.css";
+import bagIcon from "../../assets/bag.svg";
+import CartSidebar from "./CartSidebar";
 import Overlay from "./Overlay";
 
 const NavBar = () => {
@@ -14,7 +14,10 @@ const NavBar = () => {
     setIsCartOpen(!isCartOpen);
   };
 
-  const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
+  const totalQuantity = cartItems.reduce(
+    (total, item) => total + item.quantity,
+    0,
+  );
 
   useEffect(() => {
     if (isCartOpen) {
@@ -23,14 +26,11 @@ const NavBar = () => {
       document.body.classList.remove(styles.noScroll);
     }
   }, [isCartOpen]);
-  
+
   return (
     <header className={styles.navBarContainer}>
       <h1>
-        <NavLink
-          to='/'
-          className={styles.navLink}
-        >
+        <NavLink to="/" className={styles.navLink}>
           The General Store
         </NavLink>
       </h1>
@@ -38,7 +38,7 @@ const NavBar = () => {
         <ul>
           <li>
             <NavLink
-              to='/'
+              to="/"
               className={({ isActive }) =>
                 isActive ? styles.activeLink : styles.navLink
               }
@@ -48,7 +48,7 @@ const NavBar = () => {
           </li>
           <li>
             <NavLink
-              to='/shop'
+              to="/shop"
               className={({ isActive }) =>
                 isActive ? styles.activeLink : styles.navLink
               }
@@ -62,7 +62,10 @@ const NavBar = () => {
           <div className={styles.itemCount}>{totalQuantity}</div>
         </button>
       </div>
-      <CartSidebar toggleCardSidebar={toggleCardSidebar} isCartOpen={isCartOpen}/>
+      <CartSidebar
+        toggleCardSidebar={toggleCardSidebar}
+        isCartOpen={isCartOpen}
+      />
       {isCartOpen && <Overlay onClick={toggleCardSidebar} />}
     </header>
   );

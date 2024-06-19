@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
-import styles from '../../styles/Overlay.module.css';
+import styles from "../../styles/Overlay.module.css";
 
 const Overlay = ({ onClick }) => {
-  return <div className={styles.overlay} onClick={onClick}></div>
+  return <div className={styles.overlay} onClick={onClick}></div>;
 };
 
 Overlay.propTypes = {

@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import { useState } from "react";
 import PropTypes from "prop-types";
 import Button from "./Button";
-import styles from '../../styles/Input.module.css';
+import styles from "../../styles/Input.module.css";
 
-const Input = ({ type, name, initialValue, onChange }) => {  
+const Input = ({ type, name, initialValue, onChange }) => {
   const [value, setValue] = useState(initialValue || 1);
 
   const handleIncrement = () => {
@@ -21,24 +21,25 @@ const Input = ({ type, name, initialValue, onChange }) => {
   };
 
   const handleChange = (event) => {
-    const newValue = type === 'number' ? Number(event.target.value) : event.target.value;
+    const newValue =
+      type === "number" ? Number(event.target.value) : event.target.value;
     setValue(newValue);
     onChange(newValue);
   };
 
   return (
     <div className={styles.inputWrapper}>
-      <Button label='–'onClick={handleDecrement} className={styles.minusBtn} />
+      <Button label="–" onClick={handleDecrement} className={styles.minusBtn} />
       <input
         name={name}
-        type='text'
-        inputMode={type === 'number' ? 'numeric' : 'text'}
-        pattern={type === 'number' ? '[1-9]*' : undefined}
+        type="text"
+        inputMode={type === "number" ? "numeric" : "text"}
+        pattern={type === "number" ? "[1-9]*" : undefined}
         value={value.toString()}
         onChange={handleChange}
         className={styles.inputField}
       />
-      <Button label='+' onClick={handleIncrement} className={styles.plusBtn} />
+      <Button label="+" onClick={handleIncrement} className={styles.plusBtn} />
     </div>
   );
 };

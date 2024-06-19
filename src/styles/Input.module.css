@@ -42,7 +42,7 @@
   border-radius: 0 50rem 50rem 0;
 }
 
-.minusBtn:hover, 
+.minusBtn:hover,
 .plusBtn:hover {
   background-color: rgb(227, 227, 227);
 }

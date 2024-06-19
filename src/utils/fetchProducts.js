@@ -1,6 +1,6 @@
 const fetchProducts = async () => {
   // const API_URL = 'https://fakestoreapi.com/products/category/electronics'
-  const API_URL = 'https://fakestoreapi.com/products'
+  const API_URL = "https://fakestoreapi.com/products";
 
   try {
     const response = await fetch(API_URL);
@@ -12,7 +12,7 @@ const fetchProducts = async () => {
     const products = await response.json();
     return products;
   } catch (error) {
-    console.error('Error fetching products', error);
+    console.error("Error fetching products", error);
     throw error;
   }
 };

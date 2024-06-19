@@ -13,7 +13,9 @@ const CartProvider = ({ children }) => {
     if (existingProduct) {
       // If the product exists, update its quantity
       const updatedCartItems = cartItems.map((item) =>
-        item.id === product.id ? { ...item, quantity: item.quantity + quantity } : item
+        item.id === product.id
+          ? { ...item, quantity: item.quantity + quantity }
+          : item,
       );
       setCartItems(updatedCartItems);
     } else {
@@ -30,13 +32,15 @@ const CartProvider = ({ children }) => {
 
   const updateQuantity = (productId, quantity) => {
     const updatedCartItems = cartItems.map((item) =>
-      item.id === productId ? { ...item, quantity } : item
+      item.id === productId ? { ...item, quantity } : item,
     );
     setCartItems(updatedCartItems);
   };
 
   return (
-    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, updateQuantity }}>
+    <CartContext.Provider
+      value={{ cartItems, addToCart, removeFromCart, updateQuantity }}
+    >
       {children}
     </CartContext.Provider>
   );
@@ -45,6 +49,5 @@ const CartProvider = ({ children }) => {
 CartProvider.propTypes = {
   children: PropTypes.object,
 };
-
 
 export { CartContext, CartProvider };
